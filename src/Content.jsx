@@ -7,6 +7,8 @@ import { Modal } from "./Modal";
 export function Content() {
   //let posts = [];
   const [posts, setPosts] = useState([]);
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+  const [currentPost, setCurrentPost] = useState({});
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then(function (response) {
@@ -16,14 +18,26 @@ export function Content() {
     });
   };
 
+  const handleShowPost = (post) => {
+    setIsPostsShowVisible(true);
+    setCurrentPost(post);
+  };
+
+  const handleClose = () => {
+    setIsPostsShowVisible(false);
+  };
+
   useEffect(handleIndexPosts, []);
   return (
     <div>
       <PostsNew />
-      <Modal show={true}>
-        <p>TEST</p>
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
+        <h2>Title: {currentPost.title}</h2>
+        <p>Author:{currentPost.user_id}</p>
+        <p>{currentPost.body}</p>
+        <img src={currentPost.image}></img>
       </Modal>
-      <PostsIndex posts={posts} />
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
     </div>
   );
 }
