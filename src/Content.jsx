@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
+import { PostsShow } from "./PostsShow";
 
 export function Content() {
   //let posts = [];
@@ -36,10 +37,7 @@ export function Content() {
     <div>
       <PostsNew />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <h2>Title: {currentPost.title}</h2>
-        <p>Author:{currentPost.user_id}</p>
-        <p>{currentPost.body}</p>
-        <img src={currentPost.image}></img>
+        <PostsShow post={currentPost} />
       </Modal>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
     </div>
