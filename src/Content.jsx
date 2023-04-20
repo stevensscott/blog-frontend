@@ -4,6 +4,8 @@ import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   //let posts = [];
@@ -34,7 +36,9 @@ export function Content() {
 
   useEffect(handleIndexPosts, []);
   return (
-    <div>
+    <div className="container">
+      <Login />
+      <Signup />
       <PostsNew />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
