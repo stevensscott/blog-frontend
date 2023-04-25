@@ -1,11 +1,13 @@
 import { LogoutLink } from "./Logout";
+import { Login } from "./Login";
+import { Link } from "react-router-dom";
 export function Header() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark ">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
+          <a className="navbar-brand" href="/">
+            My Blogs
           </a>
           <button
             className="navbar-toggler"
@@ -20,18 +22,25 @@ export function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="#">
+              {/*   <a className="nav-link active" aria-current="page" href="/">
                 Home
-              </a>
-              <a className="nav-link" href="#posts-new">
+              </a> */}
+
+              <Link className="nav-link" to="/create">
                 New Post
-              </a>
-              <a className="nav-link" href="#posts-index">
+              </Link>
+              {/* <a className="nav-link" href="/">
                 All Post
-              </a>
-              <button>
-                <LogoutLink />
-              </button>
+              </a> */}
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+              <Link className="nav-link" to="/logout">
+                Logout
+              </Link>
             </div>
           </div>
         </div>

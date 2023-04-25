@@ -7,10 +7,15 @@ html {
 }
 
 #root{
-  height: auto;
+  height: 100vh;
 
   max-width: 100%;
   background-size: cover;
   overflow: scroll;
-  background-image: url("./assets/matt-hardy-6ArTTluciuA-unsplash.jpg");
+  background-image: url("./assets/brown-background-natural-sand-texture_53876-145228.avif");
+}
+
+.navbar-dark{
+  background-color: 	#37506d
+
 }

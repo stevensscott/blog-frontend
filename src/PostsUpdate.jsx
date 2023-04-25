@@ -1,14 +1,18 @@
-export function PostsNew(props) {
+import axios from "axios";
+
+export function PostsUpdate() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("My handle submit is working");
+
     const params = new FormData(event.target);
-    props.onCreatePost(params);
+    console.log(params);
+    console.log(event.target);
     event.target.reset();
   };
   return (
     <div id="posts-new">
-      <h1>New post</h1>
+      <h1>Update post</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Title: <input name="title" type="text" />
