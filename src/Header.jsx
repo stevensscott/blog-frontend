@@ -1,4 +1,5 @@
-import { LogoutLink } from "./Logout";
+import { Logout } from "./Logout";
+
 import { Login } from "./Login";
 import { Link } from "react-router-dom";
 export function Header() {
@@ -35,12 +36,18 @@ export function Header() {
               <Link className="nav-link" to="/about">
                 About
               </Link>
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-              <Link className="nav-link" to="/logout">
-                Logout
-              </Link>
+              {localStorage.jwt === undefined ? (
+                <>
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                  <Link className="nav-link" to="/signup">
+                    Signup
+                  </Link>
+                </>
+              ) : (
+                <Logout />
+              )}
             </div>
           </div>
         </div>

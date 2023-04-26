@@ -26,5 +26,9 @@ html {
 
 .page-footer{
   height: 100px;
-  background-color: 	#37506d
+  background-color: 	#37506d;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  
 }

@@ -36,8 +36,8 @@ export function Login() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form class="form-group" onSubmit={handleSubmit}>
+        <div class="form-group">
           Email: <input name="email" type="email" />
         </div>
         <div>

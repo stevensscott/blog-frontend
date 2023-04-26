@@ -80,6 +80,7 @@ export function Content() {
     <div className="container">
       <Routes>
         <Route path="/about" element={<About />} />
+        {/* <Route path="/logout" element={<Logout />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
